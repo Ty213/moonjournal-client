@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [title, setTitle] = useState("")
+  const [content, setContent] = useState("")
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(`Submitting Title ${title}`)
+    console.log(`Submitted this content`, content)
+    setTitle("")
+    setContent("")
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <span className="logo">☽</span> <p>moon journal</p>
       </header>
+      <div>
+        <form onSubmit={handleSubmit}>
+        <input
+          placeholder="Title"
+          type="text"
+          value={title}
+          onChange={e => setTitle(e.target.value)}>
+        </input>
+        <textarea
+          placeholder="What happened..."
+          value={content}
+          onChange={e => setContent(e.target.value)}>
+        </textarea>
+        <input type="submit" value="Save" />
+        </form>
+      </div>
     </div>
   );
 }
