@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Bellota|Open+Sans&display=swap');
+
 body {
-  background-color:#040212;
+  background-color:#04001a;
 }
 .App-header {
   padding-top: .25rem;
@@ -9,10 +11,11 @@ body {
   display: flex;
   align-items: center;
   color: white;
+  font-family: 'Bellota', cursive;
+  font-size: 1.75rem;
 }
 
 .App-header .logo {
-  color: gold;
   margin-right: .35rem;
 }
 
@@ -21,11 +24,20 @@ textarea {
   color: white;
   min-height: 20rem;
   min-width: 20rem;
-  border: 1px solid white;
+  border: 1px solid #04001a;
+  font-family: 'Open Sans', sans-serif;
 }
 
 input {
   background-color: #040212;
   color: white;
-  border: 1px solid white;
+  border: 1px solid #04001a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
